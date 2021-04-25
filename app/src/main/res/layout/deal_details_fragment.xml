@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="deal"
+            type="com.target.targetcasestudy.database.entity.DealEntity" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="16dp" />
+
+        <TextView
+            android:id="@+id/salePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pic"
+            android:layout_alignParentStart="true"
+            android:layout_margin="16dp"
+            android:maxLines="1"
+            android:minEms="3"
+            android:padding="4dp"
+            android:text="sdg @{deal.salePrice.display_string}"
+            android:textColor="@color/red_color"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/regularPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pic"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="16dp"
+            android:maxLines="1"
+            android:minEms="3"
+            android:padding="4dp"
+            android:text="sgd @{deal.regularPrice.display_string}"
+            android:textColor="@color/strikeThrough"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/salePrice"
+            android:layout_margin="16dp"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxLines="2"
+            android:text="sd g@{deal.title}"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_margin="16dp"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="5"
+            android:text=" sd @{deal.description}"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+</layout>
