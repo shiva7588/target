@@ -57,7 +57,7 @@ class DealsListFragment(private val viewModelFactory: ViewModelProvider.Factory)
         dealsAdapter.setItemClickListener(object : OnDealItemClickListener {
             override fun onDealItemClicked(dealEntity: DealEntity) {
                 activity?.supportFragmentManager?.beginTransaction()
-                    ?.add(R.id.fragment_container_view, DealDetailsFragment(dealEntity))
+                    ?.replace(R.id.fragment_container_view, DealDetailsFragment(dealEntity))
                     ?.addToBackStack(null)
                     ?.commit()
             }
@@ -81,6 +81,6 @@ class DealsListFragment(private val viewModelFactory: ViewModelProvider.Factory)
                 dealsListBinding.swipeRefreshLayout.isRefreshing = false
             }
         })
-        dealViewModel.getRepo(true)
+        dealViewModel.getRepo(false)
     }
 }

@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.target.targetcasestudy.annotations.ViewModelKey
 import com.target.targetcasestudy.factory.ViewModelFactory
+import com.target.targetcasestudy.ui.viewmodel.CreditCardViewModel
 import com.target.targetcasestudy.ui.viewmodel.DealViewModel
 import dagger.Binds
 import dagger.Module
@@ -19,4 +20,9 @@ internal abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(DealViewModel::class)
     protected abstract fun dealViewModel(dealViewModel: DealViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(CreditCardViewModel::class)
+    protected abstract fun creditCardViewModel(creditCardViewModel: CreditCardViewModel): ViewModel
 }

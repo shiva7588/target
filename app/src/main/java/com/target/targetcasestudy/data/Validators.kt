@@ -22,6 +22,8 @@ package com.target.targetcasestudy.data
  * otherwise false
  */
 fun validateCreditCard(creditCardNumber: String): Boolean {
+  if (creditCardNumber.isEmpty())
+    return false
   var nSum = 0
   var isSecond = false
   for (i in creditCardNumber.length - 1 downTo 0) {
